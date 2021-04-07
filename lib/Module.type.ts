@@ -1,7 +1,7 @@
 interface Module {
   add?: Array<{
     /**
-     * Relative path to the directory where files will be created
+     * Relative path from root to the directory where files will be created
      * (src/directory).
      */
     directory: string;
@@ -21,7 +21,7 @@ interface Module {
   }>;
   modify?: Array<{
     /**
-     * Relative path to the file (src/directory/file.js).
+     * Relative path from root to the file (src/directory/file.js).
      */
     file: string;
     from: string;
