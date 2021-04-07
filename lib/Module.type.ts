@@ -10,5 +10,5 @@ interface Module {
     file: string;
     from: string;
     to: string;
-  }>
+  }>;
 }
