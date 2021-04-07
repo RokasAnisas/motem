@@ -1,0 +1,19 @@
+{
+  "name": "motem",
+  "version": "0.0.1",
+  "description": "Simple modular templates generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RokasAniss/motem.git"
+  },
+  "author": "Rokas Anisas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RokasAniss/motem/issues"
+  },
+  "homepage": "https://github.com/RokasAniss/motem#readme"
+}
