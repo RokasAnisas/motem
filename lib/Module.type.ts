@@ -1,4 +1,6 @@
 interface Module {
+  name: string;
+  description?: string;
   add?: Array<{
     /**
      * Relative path from root to the directory where files will be created
