@@ -2,7 +2,10 @@
   "name": "motem",
   "version": "0.0.1",
   "description": "Simple modular templates generator",
-  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
