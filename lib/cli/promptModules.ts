@@ -23,8 +23,6 @@ export const promptModules = async (
     message: "Enter module name:",
   });
 
-  console.log(moduleName);
-
   return { module: moduleChice.module, moduleName: moduleName.name };
 };
 
