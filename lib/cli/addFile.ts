@@ -14,7 +14,7 @@ export const addFile = ({
   );
   const parsedTemplateStream = parsedTemplateArray.join('\r\n');
 
-  fse.writeFileSync(filePath, parsedTemplateStream);
+  // fse.writeFileSync(filePath, parsedTemplateStream);
 };
 
 interface AddFileProps {
