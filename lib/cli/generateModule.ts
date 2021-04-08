@@ -22,6 +22,7 @@ export const generateModule = ({ moduleName, moduleHead }: PromptResponse) => {
       const dirPath = `${process.cwd()}/${dirNameParsed}`;
       const filePath = `${process.cwd()}/${dirNameParsed}/${fileNameParsed}`;
 
+      // Generate directory
       fse.mkdirSync(dirPath, { recursive: true });
 
       addFile({
