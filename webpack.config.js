@@ -5,7 +5,7 @@ const ShebangPlugin = require("webpack-shebang-plugin");
 module.exports = {
   entry: {
     index: "./lib/index.ts",
-    cli: "./lib/cli.ts",
+    cli: "./lib/cli/index.ts",
   },
   target: "node",
   mode: "production",
