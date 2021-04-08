@@ -1,3 +1,4 @@
+import fse from 'fs-extra';
 import { parseModuleName } from "./parseModuleName";
 
 export const addFile = ({
@@ -12,7 +13,7 @@ export const addFile = ({
     parseModuleName({ moduleName: moduleName, string: line })
   );
 
-  console.log(parsedTemplateArray);
+  fse.writeFileSync(filePath, parsedTemplateArray.toString());
 };
 
 interface AddFileProps {
