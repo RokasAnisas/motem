@@ -1,7 +1,7 @@
 import prompts from "prompts";
-import type { FileObj } from "./fileObj.type";
+import type { ModulePassport } from "./ModulePassport.type";
 
-export const promptModules = async (filesList: FileObj[]): Promise<FileObj> => {
+export const promptModules = async (filesList: ModulePassport[]): Promise<ModulePassport> => {
   const choices = filesList.map((file) => ({
     title: file.name || file.fileName,
     description: file.description,

@@ -1,4 +1,4 @@
-export interface FileObj {
+export interface ModulePassport {
   fileName: string;
   path: string;
   name?: string;
