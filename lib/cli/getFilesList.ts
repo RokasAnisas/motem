@@ -2,12 +2,22 @@ import fse from "fs-extra";
 import type { FileObj } from "./fileObj.type";
 
 export const getFilesList = (dirPath: string): FileObj[] => {
-  console.log(dirPath);
+  const filteredFileList = fse.readdirSync(dirPath).filter((file) => {
+    const ext = file.substr(file.lastIndexOf(".") + 1).toLowerCase();
+    if (ext === "json") {
+      return true;
+    }
+    return false;
+  });
 
-  const fileList = fse.readdirSync(dirPath).map((file) => ({
-    name: file,
-    path: `${dirPath}/${file}`,
-  }));
+  const fileList = filteredFileList.map((file) => {
+    const ext = file.substr(file.lastIndexOf(".") + 1).toLowerCase();
+
+    return {
+      name: file,
+      path: `${dirPath}/${file}`,
+    };
+  });
 
   return fileList;
 };
