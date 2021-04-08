@@ -15,8 +15,6 @@ export const parseModuleName = ({
   const parsedModuleName = Case[caseValue](moduleName);
   const resultValue = string.replace(moduleNamePlaceholder, parsedModuleName);
 
-  console.log(resultValue);
-
   return resultValue;
 };
 

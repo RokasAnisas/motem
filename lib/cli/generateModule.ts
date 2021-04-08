@@ -1,4 +1,4 @@
-// import { addFile } from "./addFile";
+import { addFile } from "./addFile";
 import { parseModuleName } from "./parseModuleName";
 import { readModule } from "./readModule";
 import { PromptResponse } from "./types/PromptResponse.type";
@@ -9,16 +9,17 @@ export const generateModule = ({ moduleName, moduleHead }: PromptResponse) => {
   // Add files
   moduleContents.add?.forEach((directory) => {
     directory.files.map((file) => {
-      const filePath = parseModuleName({
+      const dirName = parseModuleName({
         string: `${directory.directory}`,
         moduleName: moduleName,
       });
+      const filePath = `${process.cwd()}/${dirName}`;
 
-      // addFile({
-      //   filePath: filePath,
-      //   moduleName: moduleName,
-      //   template: file.template,
-      // });
+      addFile({
+        filePath: filePath,
+        moduleName: moduleName,
+        template: file.template,
+      });
     });
   });
 
