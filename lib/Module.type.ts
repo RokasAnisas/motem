@@ -18,7 +18,7 @@ export interface Module {
        * [FILE_NAME] - constant case
        */
       fileName: string;
-      template: string;
+      template: string[];
     }>;
   }>;
   modify?: Array<{
