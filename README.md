@@ -21,6 +21,7 @@ Simple modular templates generator
             "import React from 'react';",
             "",
             "const [ModuleName] = () => {",
+            " const className = '[module-name]';",
             "}"
           ]
         }
