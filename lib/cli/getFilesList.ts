@@ -14,12 +14,12 @@ export const getFilesList = (dirPath: string): FileObj[] => {
 
   const fileList = filteredFileList.map((file) => {
     const filePath = `${dirPath}/${file}`;
-    const fileContents = readModule(filePath);
+    const moduleContents = readModule(filePath);
 
     return {
       fileName: file,
       path: filePath,
-      name: fileContents.name
+      name: moduleContents.name
     };
   });
 
