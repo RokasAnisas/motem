@@ -6,4 +6,8 @@ export const generateModule = ({
 }: PropmtResponse) => {
   console.log(moduleName);
   console.log(moduleHead);
+
+  // Add files
+
+  // Modify files
 };
