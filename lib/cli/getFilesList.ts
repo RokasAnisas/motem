@@ -1,8 +1,8 @@
 import fse from "fs-extra";
 import { readModule } from "./readModule";
-import type { ModulePassport } from "./types/ModulePassport.type";
+import type { ModuleHead } from "./types/ModuleHead.type";
 
-export const getFilesList = (dirPath: string): ModulePassport[] => {
+export const getFilesList = (dirPath: string): ModuleHead[] => {
   const filteredFileList = fse.readdirSync(dirPath).filter((file) => {
     const ext = file.substr(file.lastIndexOf(".") + 1).toLowerCase();
     if (ext === "json") {
