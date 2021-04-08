@@ -1,4 +1,5 @@
 export interface FileObj {
-  name: string;
+  fileName: string;
   path: string;
+  name?: string;
 }

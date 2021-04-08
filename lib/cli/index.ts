@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 import { getFilesList } from "./getFilesList";
-import { compileModule } from "./compileModule";
+import { readModule } from "./readModule";
 import { promptModules } from "./promptModules";
 
 const dirParameter = process.argv.slice(2)[0];

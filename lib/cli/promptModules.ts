@@ -3,7 +3,7 @@ import type { FileObj } from "./fileObj.type";
 
 export const promptModules = async (filesList: FileObj[]): Promise<FileObj> => {
   const choices = filesList.map((file) => ({
-    title: file.name,
+    title: file.fileName,
     value: file,
   }));
 
