@@ -1,7 +1,6 @@
 const path = require("path");
-import webpack from "webpack";
 
-const webpackConfig: webpack.Configuration = {
+module.exports = {
   entry: "./lib/index.ts",
   target: "node",
   mode: "production",
@@ -19,5 +18,3 @@ const webpackConfig: webpack.Configuration = {
     ],
   },
 };
-
-export default webpackConfig;
