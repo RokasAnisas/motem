@@ -1,5 +1,5 @@
 import fse from "fs-extra";
-import type { Module } from "../Module.type";
+import type { Module } from "./types/Module.type";
 
 export const readModule = (filePath: string): Module => {
   const moduleFileString = fse.readFileSync(filePath, "utf-8");

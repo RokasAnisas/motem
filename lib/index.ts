@@ -1,1 +1,1 @@
-export { Module } from "./Module.type";
+export { Module } from "./cli/types/Module.type";

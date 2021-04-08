@@ -1,6 +1,6 @@
 import fse from "fs-extra";
 import { readModule } from "./readModule";
-import type { ModulePassport } from "./ModulePassport.type";
+import type { ModulePassport } from "./types/ModulePassport.type";
 
 export const getFilesList = (dirPath: string): ModulePassport[] => {
   const filteredFileList = fse.readdirSync(dirPath).filter((file) => {

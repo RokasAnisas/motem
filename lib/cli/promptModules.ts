@@ -1,5 +1,5 @@
 import prompts from "prompts";
-import type { ModulePassport } from "./ModulePassport.type";
+import type { ModulePassport } from "./types/ModulePassport.type";
 
 export const promptModules = async (
   filesList: ModulePassport[]
