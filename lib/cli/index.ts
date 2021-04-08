@@ -8,7 +8,7 @@ const directoryPath = `${process.cwd()}/${dirParameter}`;
 
 const modulesList = getFilesList(directoryPath)
 
-promptModules(modulesList);
+promptModules(modulesList).then(value => console.log(value));
 
 // modulesList.forEach((module) => {
 //   compileModule(module);
