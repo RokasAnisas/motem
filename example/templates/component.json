@@ -3,14 +3,14 @@
   "description": "Generate a component",
   "add": [
     {
-      "directory": "src/components/[FileName]",
+      "directory": "src/components/[ModuleName]",
       "files": [
         {
-          "name": "[FileName].tsx",
+          "name": "[ModuleName].tsx",
           "template": [
             "import React from 'react';",
             "",
-            "const [FileName] = () => {",
+            "const [ModuleName] = () => {",
             "}"
           ]
         }

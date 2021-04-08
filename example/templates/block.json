@@ -3,14 +3,14 @@
   "description": "Generate a block",
   "add": [
     {
-      "directory": "src/components/[FileName]",
+      "directory": "src/components/[ModuleName]",
       "files": [
         {
-          "name": "[file-name].tsx",
+          "name": "[module-name].tsx",
           "template": [
             "import React from 'react';",
             "",
-            "const [FileName] = () => {",
+            "const [ModuleName] = () => {",
             "}"
           ]
         }

@@ -8,7 +8,8 @@ export const generateModule = ({ moduleName, moduleHead }: PromptResponse) => {
   // Add files
   moduleContents.add?.forEach((directory) => {
     directory.files.map((file) => {
-      const filePath = "";
+      const filePath = `${directory.directory}`;
+
       addFile({
         filePath: filePath,
         moduleName: moduleName,

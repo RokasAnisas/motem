@@ -9,13 +9,13 @@ export interface Module {
     directory: string;
     files: Array<{
       /**
-       * [Filename].ts
+       * [ModuleName].ts
        * Use the keyword file name to specify casing:
-       * [filenName] - camel case
-       * [FileName] - pascal case
-       * [file-name] - kebab case
-       * [file_name] - snake case
-       * [FILE_NAME] - constant case
+       * [moduleName] - camel case
+       * [ModuleName] - pascal case
+       * [module-name] - kebab case
+       * [module_name] - snake case
+       * [MODULE_NAME] - constant case
        */
       fileName: string;
       template: string[];
