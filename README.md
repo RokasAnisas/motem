@@ -13,14 +13,14 @@ Simple modular templates generator
   "description": "Generate a component",
   "add": [
     {
-      "directory": "src/components/[FileName]",
+      "directory": "src/components/[ModuleName]",
       "files": [
         {
-          "name": "[FileName].tsx",
+          "name": "[ModuleName].tsx",
           "template": [
             "import React from 'react';",
             "",
-            "const [FileName] = () => {",
+            "const [ModuleName] = () => {",
             "}"
           ]
         }
@@ -31,3 +31,6 @@ Simple modular templates generator
 
 ```
 4. run `motem templates`.
+
+!Important
+- The magic keyword is `[ModuleName]`, `[moduleName]`, `[module-name]`, `[module_name]`, `[MODULE_NAME]`. The case will transform the module name that you will pass to it.
