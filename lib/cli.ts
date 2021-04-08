@@ -1,12 +1,19 @@
 #! /usr/bin/env node
-import yargs from 'yargs/yargs';
-import { hideBin } from 'yargs/helpers';
+import yargs from "yargs/yargs";
+import { hideBin } from "yargs/helpers";
+import fse from 'fs-extra';
+// import path from "path";
 
-
-const argv = yargs(hideBin(process.argv)).argv
+const getYargs = yargs(hideBin(process.argv));
+const argv = getYargs.argv;
 console.log(argv.dir);
-// if (argv['folder'] > 3 && argv.distance < 53.5) {
-//   console.log('Plunder more riffiwobbles!')
-// } else {
-//   console.log('Retreat from the xupptumblers!')
-// }
+
+if (typeof argv.dir === "string") {
+  const directoryPath = `${process.cwd()}/${argv.dir}`;
+
+  console.log(directoryPath);
+
+  fse.readdirSync(directoryPath).forEach(file => {
+    console.log(file);
+  });
+}
