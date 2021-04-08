@@ -11,8 +11,6 @@ export const getFilesList = (dirPath: string): FileObj[] => {
   });
 
   const fileList = filteredFileList.map((file) => {
-    const ext = file.substr(file.lastIndexOf(".") + 1).toLowerCase();
-
     return {
       name: file,
       path: `${dirPath}/${file}`,
