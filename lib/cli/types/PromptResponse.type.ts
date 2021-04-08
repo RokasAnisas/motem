@@ -1,6 +1,6 @@
 import { ModuleHead } from "./ModuleHead.type";
 
-export interface PropmtResponse {
+export interface PromptResponse {
   moduleHead: ModuleHead;
   moduleName: string;
 }

@@ -1,14 +1,21 @@
+import { addFile } from "./addFile";
 import { readModule } from "./readModule";
-import { PropmtResponse } from "./types/PromptResponse.type";
+import { PromptResponse } from "./types/PromptResponse.type";
 
-export const generateModule = ({
-  moduleName,
-  moduleHead,
-}: PropmtResponse) => {
+export const generateModule = ({ moduleName, moduleHead }: PromptResponse) => {
   const moduleContents = readModule(moduleHead.path);
-  console.log(moduleContents);
 
   // Add files
+  moduleContents.add?.forEach((directory) => {
+    directory.files.map((file) => {
+      const filePath = "";
+      addFile({
+        filePath: filePath,
+        moduleName: moduleName,
+        template: file.template,
+      });
+    });
+  });
 
   // Modify files
 };

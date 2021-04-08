@@ -1,10 +1,10 @@
 import prompts from "prompts";
 import type { ModuleHead } from "./types/ModuleHead.type";
-import { PropmtResponse } from "./types/PromptResponse.type";
+import { PromptResponse } from "./types/PromptResponse.type";
 
 export const promptModules = async (
   filesList: ModuleHead[]
-): Promise<PropmtResponse> => {
+): Promise<PromptResponse> => {
   const choices = filesList.map((file) => ({
     title: file.name || file.fileName,
     description: file.description,
