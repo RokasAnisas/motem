@@ -1,6 +1,6 @@
 {
   "name": "Component",
-  "description": "Whatevs",
+  "description": "Generate a component",
   "add": [
     {
       "directory": "src/components/[FileName]",
