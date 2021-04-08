@@ -1,11 +1,12 @@
+import { readModule } from "./readModule";
 import { PropmtResponse } from "./types/PromptResponse.type";
 
 export const generateModule = ({
   moduleName,
   moduleHead,
 }: PropmtResponse) => {
-  console.log(moduleName);
-  console.log(moduleHead);
+  const moduleContents = readModule(moduleHead.path);
+  console.log(moduleContents);
 
   // Add files
 
