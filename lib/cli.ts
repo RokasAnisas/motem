@@ -1,4 +1,12 @@
 #! /usr/bin/env node
-const appName = "Motem";
+import yargs from 'yargs/yargs';
+import { hideBin } from 'yargs/helpers';
 
-console.log(`Hey, it's ${appName}!`);
+
+const argv = yargs(hideBin(process.argv)).argv
+console.log(argv.dir);
+// if (argv['folder'] > 3 && argv.distance < 53.5) {
+//   console.log('Plunder more riffiwobbles!')
+// } else {
+//   console.log('Retreat from the xupptumblers!')
+// }
