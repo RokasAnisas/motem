@@ -4,21 +4,26 @@ export const parseModuleName = ({
   moduleName,
   string,
 }: ParseModuleNameProps): string => {
-  const regexMatch = /\[(?:M(?:ODULE_NAME|oduleName)|module(?:[\x2D_]n|N)ame)\]/;
+  const regexMatch = RegExp(
+    /\[(?:M(?:ODULE_NAME|oduleName)|module(?:[\x2D_]n|N)ame)\]/g
+  );
 
-  const moduleNamePlaceholderArr = string.match(regexMatch);
+  const moduleNamePlaceholderArr = Array.from(
+    string.matchAll(regexMatch),
+    (m) => m[0]
+  );
 
-  if (!!moduleNamePlaceholderArr) {
-    const moduleNamePlaceholder = moduleNamePlaceholderArr[0];
-    const moduleNamePlaceholderStripped = moduleNamePlaceholder
-    .replace("[", "")
-    .replace("]", "");
-    const caseValue = Case.of(moduleNamePlaceholderStripped) as CaseValue;
+  if (moduleNamePlaceholderArr.length > 0) {
+    let resultLine: string = string;
+    moduleNamePlaceholderArr.forEach((hookLine) => {
+      const sanitizedHookLine = hookLine.replace("[", "").replace("]", "");
+      const caseValue = Case.of(sanitizedHookLine) as CaseValue;
+      const parsedModuleName = Case[caseValue](moduleName);
 
-  const parsedModuleName = Case[caseValue](moduleName);
-    const resultValue = string.replace(moduleNamePlaceholder, parsedModuleName);
+      resultLine = resultLine.replace(hookLine, parsedModuleName);
+    });
 
-    return resultValue;
+    return resultLine;
   }
 
   return string;
