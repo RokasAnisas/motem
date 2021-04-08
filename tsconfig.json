@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "allowJs": true,
+    "outDir": "./dist/",
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": false,
+    "baseUrl": "./",
+    "rootDir": "lib",
     "declaration": true,
     "declarationDir": "dist",
-    "rootDir": "./",
-    "outDir": "./dist/",
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "es2016", "es2017"],
+    "sourceMap": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

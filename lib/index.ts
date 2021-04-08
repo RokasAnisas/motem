@@ -1,1 +1,1 @@
-export type { Module } from "./Module.type";
+export { Module } from "./Module.type";
