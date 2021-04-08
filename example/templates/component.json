@@ -9,13 +9,21 @@
           "fileName": "[ModuleName].tsx",
           "template": [
             "import React from 'react';",
+            "import type { [ModuleName]Props } from './[ModuleName].props';",
             "",
             "const [ModuleName] = ({ label }: [ModuleName]Props) => {",
             "  const className = '[module-name]';",
             "  return <div className={className}>{label}</div>",
             "}",
             "",
-            "interface [ModuleName]Props {",
+            "export default [ModuleName];",
+            ""
+          ]
+        },
+        {
+          "fileName": "[ModuleName].props.ts",
+          "template": [
+            "export interface [ModuleName]Props {",
             "  label: string;",
             "}",
             ""
