@@ -1,8 +1,14 @@
-// import { parseModuleName } from "../parseModuleName";
+import { parseModuleName } from "../parseModuleName";
 
-describe('parseModuleName', () => {
-  it('Should parse snake case module name', () => {
-    expect(true).toBe(true);
+describe("parseModuleName", () => {
+  it("Should parse camelCase module name", () => {
+    const testString = "path/to/[moduleName]";
+    const testModuleName = "TEST NAME";
+    const result = parseModuleName({
+      moduleName: testModuleName,
+      string: testString,
+    });
+
+    expect(result).toBe('path/to/testName');
   });
 });
-
