@@ -7,7 +7,12 @@ export const addFile = ({
 }: AddFileProps): void => {
   console.log(filePath);
   console.log(moduleName);
-  console.log(template);
+
+  const parsedTemplateArray = template.map((line) =>
+    parseModuleName({ moduleName: moduleName, string: line })
+  );
+
+  console.log(parsedTemplateArray);
 };
 
 interface AddFileProps {
