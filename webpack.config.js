@@ -1,4 +1,5 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./lib/index.ts",
@@ -17,4 +18,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new CleanWebpackPlugin()],
 };
