@@ -1,3 +1,5 @@
+import { parseModuleName } from "./parseModuleName";
+
 export const addFile = ({
   filePath,
   moduleName,

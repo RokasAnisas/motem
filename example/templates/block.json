@@ -6,7 +6,7 @@
       "directory": "src/components/[ModuleName]",
       "files": [
         {
-          "name": "[module-name].tsx",
+          "fileName": "[ModuleName].tsx",
           "template": [
             "import React from 'react';",
             "",

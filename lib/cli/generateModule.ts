@@ -9,11 +9,15 @@ export const generateModule = ({ moduleName, moduleHead }: PromptResponse) => {
   // Add files
   moduleContents.add?.forEach((directory) => {
     directory.files.map((file) => {
-      const dirName = parseModuleName({
+      const dirNameParsed = parseModuleName({
         string: `${directory.directory}`,
         moduleName: moduleName,
       });
-      const filePath = `${process.cwd()}/${dirName}`;
+      const fileNameParsed = parseModuleName({
+        string: `${file.fileName}`,
+        moduleName: moduleName,
+      });
+      const filePath = `${process.cwd()}/${dirNameParsed}/${fileNameParsed}`;
 
       addFile({
         filePath: filePath,
