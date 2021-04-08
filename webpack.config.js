@@ -1,9 +1,10 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ShebangPlugin = require("webpack-shebang-plugin");
 
 module.exports = {
   entry: {
-    cli: "./lib/cli.js",
+    cli: "./lib/cli.ts",
   },
   target: "node",
   mode: "production",
@@ -21,9 +22,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/node_modules/],
-        use: ["shebang-loader", "babel-loader"],
+        use: ["babel-loader"],
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [new CleanWebpackPlugin(), new ShebangPlugin()],
 };
