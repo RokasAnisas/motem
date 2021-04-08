@@ -1,13 +1,9 @@
 import fse from "fs-extra";
 
-export const getFilesList = (dir: string): void => {
-  if (typeof dir === "string") {
-    const directoryPath = `${process.cwd()}/${dir}`;
+export const getFilesList = (dirPath: string): void => {
+  console.log(dirPath);
 
-    console.log(directoryPath);
-
-    fse.readdirSync(directoryPath).forEach((file) => {
-      console.log(file);
-    });
-  }
+  fse.readdirSync(dirPath).forEach((file) => {
+    console.log(file);
+  });
 };
