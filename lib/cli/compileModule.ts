@@ -6,5 +6,7 @@ export const compileModule = (fileObj: FileObj): void => {
   const moduleFileString = fse.readFileSync(fileObj.path, "utf-8");
   const parsed: Module = JSON.parse(moduleFileString);
 
-  console.log(parsed.name);
+  if (!!parsed.add) {
+    console.log(parsed.add[0].files[0].template);
+  }
 };

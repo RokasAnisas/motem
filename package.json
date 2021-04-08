@@ -26,6 +26,7 @@
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "@types/fs-extra": "^9.0.10",
+    "@types/prompts": "^2.0.10",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "path": "^0.12.7",
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "fs-extra": "^9.1.0",
+    "prompts": "^2.4.1",
     "typescript": "^4.2.4"
   }
 }

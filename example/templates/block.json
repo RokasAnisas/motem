@@ -1,0 +1,20 @@
+{
+  "name": "Component",
+  "description": "Whatevs",
+  "add": [
+    {
+      "directory": "src/components/[FileName]",
+      "files": [
+        {
+          "name": "[FileName].tsx",
+          "template": [
+            "import React from 'react';",
+            "",
+            "const [FileName] = () => {",
+            "}"
+          ]
+        }
+      ]
+    }
+  ]
+}
