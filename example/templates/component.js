@@ -1,1 +1,4 @@
-console.log("component");
+module.exports = {
+  name: "Component",
+  description: "Whatevs",
+};
