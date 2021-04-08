@@ -12,8 +12,9 @@ export const addFile = ({
   const parsedTemplateArray = template.map((line) =>
     parseModuleName({ moduleName: moduleName, string: line })
   );
+  const parsedTemplateStream = parsedTemplateArray.join('\r\n');
 
-  fse.writeFileSync(filePath, parsedTemplateArray.toString());
+  fse.writeFileSync(filePath, parsedTemplateStream);
 };
 
 interface AddFileProps {
