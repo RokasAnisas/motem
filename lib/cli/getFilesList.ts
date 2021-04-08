@@ -6,7 +6,7 @@ export const getFilesList = (dirPath: string): FileObj[] => {
 
   const fileList = fse.readdirSync(dirPath).map((file) => ({
     name: file,
-    path: `${process.cwd()}/${file}`,
+    path: `${dirPath}/${file}`,
   }));
 
   return fileList;
