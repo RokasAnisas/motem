@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/RokasAniss/motem/issues"
   },
-  "homepage": "https://github.com/RokasAniss/motem#readme"
+  "homepage": "https://github.com/RokasAniss/motem#readme",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^5.31.0"
+  }
 }
