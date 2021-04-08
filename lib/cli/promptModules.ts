@@ -1,19 +1,34 @@
 import prompts from "prompts";
 import type { ModulePassport } from "./ModulePassport.type";
 
-export const promptModules = async (filesList: ModulePassport[]): Promise<ModulePassport> => {
+export const promptModules = async (
+  filesList: ModulePassport[]
+): Promise<PropmtResponse> => {
   const choices = filesList.map((file) => ({
     title: file.name || file.fileName,
     description: file.description,
     value: file,
   }));
 
-  const result = await prompts({
+  const moduleChice = await prompts({
     type: "select",
     name: "module",
     message: "Choose",
     choices: choices,
   });
 
-  return result.module;
+  const moduleName = await prompts({
+    type: "text",
+    name: "name",
+    message: "Enter module name:",
+  });
+
+  console.log(moduleName);
+
+  return { module: moduleChice.module, moduleName: moduleName.name };
 };
+
+interface PropmtResponse {
+  module: ModulePassport;
+  moduleName: string;
+}
