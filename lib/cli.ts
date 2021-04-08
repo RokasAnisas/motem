@@ -1,15 +1,10 @@
 #! /usr/bin/env node
-import yargs from "yargs/yargs";
-import { hideBin } from "yargs/helpers";
 import fse from 'fs-extra';
-// import path from "path";
 
-const getYargs = yargs(hideBin(process.argv));
-const argv = getYargs.argv;
-console.log(argv.dir);
+const dirParameter = process.argv.slice(2)[0];
 
-if (typeof argv.dir === "string") {
-  const directoryPath = `${process.cwd()}/${argv.dir}`;
+if (typeof dirParameter === "string") {
+  const directoryPath = `${process.cwd()}/${dirParameter}`;
 
   console.log(directoryPath);
 
