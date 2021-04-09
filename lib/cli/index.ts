@@ -4,14 +4,13 @@ import { getFilesList } from "./getFilesList";
 import { promptModuleName } from "./promptModuleName";
 import { generateModule } from "./generateModule";
 import { promptModuleType } from "./promptModuleType";
+import { printMessage } from "./printMessage";
 
 const dirParameter = process.argv.slice(2)[0];
 const directoryPath = `${process.cwd()}/${dirParameter}`;
 
 const modulesList = getFilesList(directoryPath);
 
-// promptModules(modulesList).then(value => generateModule(value));
-// promptModuleType(modulesList).then((value) => checkDuplicates(value));
 promptModuleType(modulesList).then((moduleType) => {
   const promptName = () =>
     promptModuleName().then((moduleName) => {
@@ -20,7 +19,7 @@ promptModuleType(modulesList).then((moduleType) => {
         moduleName: moduleName,
       }).then((moduleExists) => {
         if (moduleExists) {
-          console.log(`${moduleName} exists!`);
+          printMessage({ type: 'error', message: `${moduleName} exists!`});
           promptName();
         } else {
           generateModule({ moduleName: moduleName, moduleType: moduleType });

@@ -3,7 +3,7 @@
   "description": "Generate a component",
   "add": [
     {
-      "directory": "src/components/[ModuleName]",
+      "dirPath": "src/components/[ModuleName]",
       "files": [
         {
           "fileName": "[ModuleName].tsx",
@@ -27,6 +27,26 @@
             "  label: string;",
             "}",
             ""
+          ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": [
+            "export { default } from './[ModuleName]';",
+            ""
+          ]
+        }
+      ]
+    }
+  ],
+  "modify": [
+    {
+      "filePath": "src/module.ts",
+      "lines": [
+        {
+          "hook": "// IMPORT_MODULE",
+          "appendLines": [
+            "import [ModuleName] from './components/[ModuleName]';"
           ]
         }
       ]

@@ -1,3 +1,4 @@
+import { ModifyFile } from "./ModifyFile.type";
 export interface Module {
   name: string;
   description?: string;
@@ -6,7 +7,7 @@ export interface Module {
      * Relative path from root to the directory where files will be created
      * (src/directory).
      */
-    directory: string;
+    dirPath: string;
     files: Array<{
       /**
        * [ModuleName].ts
@@ -21,12 +22,5 @@ export interface Module {
       template: string[];
     }>;
   }>;
-  modify?: Array<{
-    /**
-     * Relative path from root to the file (src/directory/file.js).
-     */
-    file: string;
-    from: string;
-    to: string;
-  }>;
+  modify?: Array<ModifyFile>;
 }
