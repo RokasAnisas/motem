@@ -14,7 +14,20 @@ export const checkDuplicates = async ({
       string: `${dir.directory}`,
       moduleName: moduleName,
     });
-    console.log(dirNameParsed);
+
+    // If module is added to a shared dir like `components/file.tsx`
+    if (dir.directory === dirNameParsed) {
+      const fileResults: boolean[] | undefined = dir.files.map(file => {
+        const fileNameParsed = parseModuleName({
+          string: `${file.fileName}`,
+          moduleName: moduleName,
+        });
+        return fse.existsSync(`${dirNameParsed}/${fileNameParsed}`);
+      });
+
+      return !!fileResults && fileResults.includes(true);
+    }
+
     const dirPath = `${process.cwd()}/${dirNameParsed}`;
     const dirCheckResult = fse.existsSync(`${dirPath}`);
 
