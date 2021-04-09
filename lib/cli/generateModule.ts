@@ -29,6 +29,7 @@ export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
 
       addFile({
         filePath: filePath,
+        fileName: fileNameParsed,
         moduleName: moduleName,
         template: file.template,
       });
