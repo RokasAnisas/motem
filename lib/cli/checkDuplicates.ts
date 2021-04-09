@@ -1,11 +1,27 @@
+import fse from "fs-extra";
 import { PromptResponse } from "./types/PromptResponse.type";
+import { readModule } from "./readModule";
+import { parseModuleName } from "./parseModuleName";
 
 export const checkDuplicates = async ({
   moduleType,
   moduleName,
-}: PromptResponse) => {
-  console.log(moduleType);
-  console.log(moduleName);
+}: PromptResponse): Promise<boolean> => {
+  const moduleContents = readModule(moduleType.path);
 
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  // console.log(moduleContents);
+  // console.log(moduleName);
+  const results: boolean[] | undefined = moduleContents.add?.map((dir) => {
+    const dirNameParsed = parseModuleName({
+      string: `${dir.directory}`,
+      moduleName: moduleName,
+    });
+    const dirPath = `${process.cwd()}/${dirNameParsed}`;
+    const dirCheckResult = fse.existsSync(`${dirPath}`);
+
+    return dirCheckResult;
+  });
+
+
+  return !!results && results.includes(true);
 };

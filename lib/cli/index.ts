@@ -18,7 +18,7 @@ promptModuleType(modulesList).then((moduleType) => {
       checkDuplicates({
         moduleType: moduleType,
         moduleName: moduleName,
-      }).then((value) => console.log(value));
+      }).then(value => console.log(value));
     });
     promptName();
 });
