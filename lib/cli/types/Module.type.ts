@@ -25,8 +25,10 @@ export interface Module {
     /**
      * Relative path from root to the file (src/directory/file.js).
      */
-    file: string;
-    from: string;
-    to: string;
+    filePath: string;
+    lines: Array<{
+      from: string;
+      to: string;
+    }>;
   }>;
 }
