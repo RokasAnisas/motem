@@ -28,6 +28,13 @@
             "}",
             ""
           ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": [
+            "export { default } from './[ModuleName]';",
+            ""
+          ]
         }
       ]
     }
