@@ -1,6 +1,7 @@
 import fse from 'fs-extra';
 import { parseModuleName } from "./parseModuleName";
 import { printMessage } from './printMessage';
+import { spreadArray } from './spreadArray';
 
 export const addFile = ({
   filePath,
@@ -11,7 +12,7 @@ export const addFile = ({
   const parsedTemplateArray = template.map((line) =>
     parseModuleName({ moduleName: moduleName, string: line })
   );
-  const parsedTemplateStream = parsedTemplateArray.join('\r\n');
+  const parsedTemplateStream = spreadArray(parsedTemplateArray);
 
   fse.writeFileSync(filePath, parsedTemplateStream);
   printMessage({ type: 'success', message: `+ ${fileName}`});

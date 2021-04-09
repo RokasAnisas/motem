@@ -1,6 +1,7 @@
 import fse from "fs-extra";
 import { parseModuleName } from "./parseModuleName";
 import { printMessage } from "./printMessage";
+import { spreadArray } from "./spreadArray";
 import { ModifyFile } from "./types/ModifyFile.type";
 
 export const modifyFile = ({
@@ -16,7 +17,7 @@ export const modifyFile = ({
       return parseModuleName({ moduleName: moduleName, string: line });
     });
     const linesArray = [...parsedLines, element.hook];
-    const parsedTemplateStream = linesArray.join("\r\n");
+    const parsedTemplateStream = spreadArray(linesArray);
 
     modifiedFileStream = modifiedFileStream.replace(
       element.hook,
