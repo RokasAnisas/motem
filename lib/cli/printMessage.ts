@@ -5,7 +5,7 @@ export const printMessage = ({ type, message }: PrintMessageProps): void => {
     success: '\x1b[32m%s\x1b[0m',
   };
 
-  console.log(typeMap[type], `+ ${message}`);
+  console.log(typeMap[type], `${message}`);
 }
 
 type MessageType = 'title' | 'success' | 'error';
