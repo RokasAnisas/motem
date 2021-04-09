@@ -6,7 +6,7 @@ export interface Module {
      * Relative path from root to the directory where files will be created
      * (src/directory).
      */
-    directory: string;
+    dirPath: string;
     files: Array<{
       /**
        * [ModuleName].ts

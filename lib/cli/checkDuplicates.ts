@@ -11,12 +11,12 @@ export const checkDuplicates = async ({
 
   const results: boolean[] | undefined = moduleContents.add?.map((dir) => {
     const dirNameParsed = parseModuleName({
-      string: `${dir.directory}`,
+      string: `${dir.dirPath}`,
       moduleName: moduleName,
     });
 
     // If module is added to a shared dir like `components/file.tsx`
-    if (dir.directory === dirNameParsed) {
+    if (dir.dirPath === dirNameParsed) {
       const fileResults: boolean[] | undefined = dir.files.map(file => {
         const fileNameParsed = parseModuleName({
           string: `${file.fileName}`,

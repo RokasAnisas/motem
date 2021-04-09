@@ -12,7 +12,7 @@ export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
   moduleContents.add?.forEach((directory) => {
     directory.files.map((file) => {
       const dirNameParsed = parseModuleName({
-        string: `${directory.directory}`,
+        string: `${directory.dirPath}`,
         moduleName: moduleName,
       });
       const fileNameParsed = parseModuleName({

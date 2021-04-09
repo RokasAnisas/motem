@@ -13,7 +13,7 @@ Simple modular templates generator
   "description": "Generate a component",
   "add": [
     {
-      "directory": "src/components/[ModuleName]",
+      "dirPath": "src/components/[ModuleName]",
       "files": [
         {
           "name": "[ModuleName].tsx",

@@ -3,7 +3,7 @@
   "description": "Generate a single component",
   "add": [
     {
-      "directory": "src/components",
+      "dirPath": "src/components",
       "files": [
         {
           "fileName": "[ModuleName].tsx",
