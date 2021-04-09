@@ -5,8 +5,8 @@ import { parseModuleName } from "./parseModuleName";
 import { readModule } from "./readModule";
 import { PromptResponse } from "./types/PromptResponse.type";
 
-export const generateModule = ({ moduleName, moduleHead }: PromptResponse) => {
-  const moduleContents = readModule(moduleHead.path);
+export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
+  const moduleContents = readModule(moduleType.path);
 
   // Add files
   moduleContents.add?.forEach((directory) => {

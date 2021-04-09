@@ -1,10 +1,9 @@
 import prompts from "prompts";
 import type { ModuleHead } from "./types/ModuleHead.type";
-import { PromptResponse } from "./types/PromptResponse.type";
 
-export const promptModules = async (
+export const promptModuleType = async (
   filesList: ModuleHead[]
-): Promise<PromptResponse> => {
+): Promise<ModuleHead> => {
   const choices = filesList.map((file) => ({
     title: file.name || file.fileName,
     description: file.description,
@@ -18,11 +17,5 @@ export const promptModules = async (
     choices: choices,
   });
 
-  const moduleName = await prompts({
-    type: "text",
-    name: "name",
-    message: "Enter module name:",
-  });
-
-  return { moduleHead: moduleChice.module, moduleName: moduleName.name };
+  return moduleChice.module;
 };
