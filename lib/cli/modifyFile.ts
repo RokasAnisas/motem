@@ -1,5 +1,6 @@
 import fse from "fs-extra";
 import { parseModuleName } from "./parseModuleName";
+import { printMessage } from "./printMessage";
 import { ModifyFile } from "./types/ModifyFile.type";
 
 export const modifyFile = ({
@@ -22,6 +23,8 @@ export const modifyFile = ({
       parsedTemplateStream
     );
   });
+
+  printMessage({ type: "warning", message: `~ ${lines.length} lines modified` });
 
   fse.writeFileSync(filePath, modifiedFileStream, "utf8");
 };
