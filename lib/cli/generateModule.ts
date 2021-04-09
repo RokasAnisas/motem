@@ -40,6 +40,10 @@ export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
   // Modify files
   moduleContents.modify?.forEach((file) => {
     const filePath = `${process.cwd()}/${file.filePath}`;
-    modifyFile({ filePath: filePath, lines: file.lines });
+    modifyFile({
+      filePath: filePath,
+      lines: file.lines,
+      moduleName: moduleName,
+    });
   });
 };
