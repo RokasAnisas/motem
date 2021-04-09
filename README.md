@@ -19,10 +19,44 @@ Simple modular templates generator
           "fileName": "[ModuleName].tsx",
           "template": [
             "import React from 'react';",
+            "import type { [ModuleName]Props } from './[ModuleName].props';",
             "",
-            "const [ModuleName] = () => {",
-            " const className = '[module-name]';",
-            "}"
+            "const [ModuleName] = ({ label }: [ModuleName]Props) => {",
+            "  const className = '[module-name]';",
+            "  return <div className={className}>{label}</div>",
+            "}",
+            "",
+            "export default [ModuleName];",
+            ""
+          ]
+        },
+        {
+          "fileName": "[ModuleName].props.ts",
+          "template": [
+            "export interface [ModuleName]Props {",
+            "  label: string;",
+            "}",
+            ""
+          ]
+        },
+        {
+          "fileName": "index.ts",
+          "template": [
+            "export { default } from './[ModuleName]';",
+            ""
+          ]
+        }
+      ]
+    }
+  ],
+  "modify": [
+    {
+      "filePath": "src/module.ts",
+      "lines": [
+        {
+          "hook": "// IMPORT_MODULE",
+          "appendLines": [
+            "import [ModuleName] from './components/[ModuleName]';"
           ]
         }
       ]

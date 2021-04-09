@@ -4,6 +4,7 @@ import { addFile } from "./addFile";
 import { parseModuleName } from "./parseModuleName";
 import { printMessage } from "./printMessage";
 import { readModule } from "./readModule";
+import { modifyFile } from "./modifyFile";
 import { PromptResponse } from "./types/PromptResponse.type";
 
 export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
@@ -37,4 +38,14 @@ export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
   });
 
   // Modify files
+  moduleContents.modify?.forEach((file) => {
+    const filePath = `${process.cwd()}/${file.filePath}`;
+
+    printMessage({ type: "title", message: `${file.filePath}:` });
+    modifyFile({
+      filePath: filePath,
+      lines: file.lines,
+      moduleName: moduleName,
+    });
+  });
 };
