@@ -10,8 +10,6 @@ const directoryPath = `${process.cwd()}/${dirParameter}`;
 
 const modulesList = getFilesList(directoryPath);
 
-// promptModules(modulesList).then(value => generateModule(value));
-// promptModuleType(modulesList).then((value) => checkDuplicates(value));
 promptModuleType(modulesList).then((moduleType) => {
   const promptName = () =>
     promptModuleName().then((moduleName) => {
