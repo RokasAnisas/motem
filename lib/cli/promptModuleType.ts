@@ -14,7 +14,7 @@ export const promptModuleType = async (
     {
       type: "select",
       name: "module",
-      message: "Choose",
+      message: "Choose type",
       choices: choices,
     },
     {
