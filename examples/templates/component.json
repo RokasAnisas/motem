@@ -45,7 +45,7 @@
       "lines": [
         {
           "hook": "// IMPORT_MODULE",
-          "append": [
+          "appendLines": [
             "import [ModuleName] from './components/[ModuleName]';"
           ]
         }
