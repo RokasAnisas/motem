@@ -38,5 +38,18 @@
         }
       ]
     }
+  ],
+  "modify": [
+    {
+      "filePath": "src/module.ts",
+      "lines": [
+        {
+          "hook": "// IMPORT_MODULE",
+          "append": [
+            "import [ModuleName] from './components/[ModuleName]';"
+          ]
+        }
+      ]
+    }
   ]
 }
