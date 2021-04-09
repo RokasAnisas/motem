@@ -16,7 +16,7 @@ Simple modular templates generator
       "dirPath": "src/components/[ModuleName]",
       "files": [
         {
-          "name": "[ModuleName].tsx",
+          "fileName": "[ModuleName].tsx",
           "template": [
             "import React from 'react';",
             "",
