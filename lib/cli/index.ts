@@ -2,7 +2,7 @@
 import { checkDuplicates } from "./checkDuplicates";
 import { getFilesList } from "./getFilesList";
 import { promptModuleName } from "./promptModuleName";
-// import { generateModule } from "./generateModule";
+import { generateModule } from "./generateModule";
 import { promptModuleType } from "./promptModuleType";
 
 const dirParameter = process.argv.slice(2)[0];
@@ -18,7 +18,14 @@ promptModuleType(modulesList).then((moduleType) => {
       checkDuplicates({
         moduleType: moduleType,
         moduleName: moduleName,
-      }).then(value => console.log(value));
+      }).then((moduleExists) => {
+        if (moduleExists) {
+          console.log(`${moduleName} exists!`);
+          promptName();
+        } else {
+          generateModule({ moduleName: moduleName, moduleType: moduleType });
+        }
+      });
     });
-    promptName();
+  promptName();
 });

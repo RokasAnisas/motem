@@ -9,13 +9,12 @@ export const checkDuplicates = async ({
 }: PromptResponse): Promise<boolean> => {
   const moduleContents = readModule(moduleType.path);
 
-  // console.log(moduleContents);
-  // console.log(moduleName);
   const results: boolean[] | undefined = moduleContents.add?.map((dir) => {
     const dirNameParsed = parseModuleName({
       string: `${dir.directory}`,
       moduleName: moduleName,
     });
+    console.log(dirNameParsed);
     const dirPath = `${process.cwd()}/${dirNameParsed}`;
     const dirCheckResult = fse.existsSync(`${dirPath}`);
 

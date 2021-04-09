@@ -10,12 +10,20 @@ export const promptModuleType = async (
     value: file,
   }));
 
-  const moduleChice = await prompts({
-    type: "select",
-    name: "module",
-    message: "Choose",
-    choices: choices,
-  });
+  const moduleChice = await prompts(
+    {
+      type: "select",
+      name: "module",
+      message: "Choose",
+      choices: choices,
+    },
+    {
+      onCancel: () => {
+        console.log(`Abort generate`);
+        process.exit(1);
+      },
+    }
+  );
 
   return moduleChice.module;
 };
