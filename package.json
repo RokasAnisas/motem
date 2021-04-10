@@ -1,6 +1,6 @@
 {
   "name": "motem",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Simple modular templates generator",
   "publishConfig": {
     "access": "public"
@@ -13,6 +13,10 @@
   "bin": {
     "motem": "./dist/cli.js"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RokasAniss/motem.git"
