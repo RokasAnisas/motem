@@ -1,4 +1,4 @@
-# MOTEM [WIP]
+# MOTEM
 
 Simple modular templates generator
 
