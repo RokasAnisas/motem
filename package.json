@@ -1,6 +1,6 @@
 {
   "name": "motem",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Simple modular templates generator",
   "publishConfig": {
     "access": "public"
