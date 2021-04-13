@@ -13,19 +13,37 @@ export const modifyFile = ({
   let modifiedFileStream: string = fileStream;
 
   lines.forEach((element) => {
-    const parsedLines = element.appendLines.map((line) => {
-      return parseModuleName({ moduleName: moduleName, string: line });
-    });
-    const linesArray = [...parsedLines, element.hook];
-    const parsedTemplateStream = spreadArray(linesArray);
+    if (element.appendLines) {
+      const parsedLines = element.appendLines.map((line) => {
+        return parseModuleName({ moduleName: moduleName, string: line });
+      });
+      const linesArray = [...parsedLines, element.hook];
+      const parsedTemplateStream = spreadArray(linesArray);
 
-    modifiedFileStream = modifiedFileStream.replace(
-      element.hook,
-      parsedTemplateStream
-    );
+      modifiedFileStream = modifiedFileStream.replace(
+        element.hook,
+        parsedTemplateStream
+      );
+    }
+
+    if (element.appendLine) {
+      const parsedLine = parseModuleName({
+        moduleName: moduleName,
+        string: element.appendLine,
+      });
+      const lineValue = `${parsedLine} ${element.hook}`;
+      console.log(modifiedFileStream);
+      console.log(lineValue);
+      console.log(element.hook);
+
+      modifiedFileStream = modifiedFileStream.replace(element.hook, lineValue);
+    }
   });
 
-  printMessage({ type: "warning", message: `~ ${lines.length} lines modified` });
+  printMessage({
+    type: "warning",
+    message: `~ ${lines.length} lines modified`,
+  });
 
   fse.writeFileSync(filePath, modifiedFileStream, "utf8");
 };

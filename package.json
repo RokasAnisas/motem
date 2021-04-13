@@ -11,6 +11,7 @@
     "npm": "^7.0.0"
   },
   "scripts": {
+    "start": "webpack --watch",
     "build": "webpack",
     "test": "jest"
   },

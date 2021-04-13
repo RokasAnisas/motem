@@ -31,10 +31,7 @@
         },
         {
           "fileName": "index.ts",
-          "template": [
-            "export { default } from './[ModuleName]';",
-            ""
-          ]
+          "template": ["export { default } from './[ModuleName]';", ""]
         }
       ]
     }
@@ -51,9 +48,7 @@
         },
         {
           "hook": "/* ADD_UNION_TYPE */",
-          "appendLines": [
-            "| '[module-name]'"
-          ]
+          "appendLine": "| '[module-name]'"
         }
       ]
     }
