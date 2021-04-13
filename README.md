@@ -58,6 +58,10 @@ Simple modular templates generator
           "appendLines": [
             "import [ModuleName] from './components/[ModuleName]';"
           ]
+        },
+        {
+          "hook": "/* ADD_UNION_TYPE */",
+          "appendLine": "| '[module-name]'"
         }
       ]
     }
