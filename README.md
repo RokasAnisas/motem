@@ -89,5 +89,6 @@ Simple modular templates generator
 | modify[0].filePath             | String           | Yes      | Relative path(from where motem command will be launched) to the file you want to modify                                                      |
 | modify[0].lines                | Array            | Yes      | Array of a specific object, where you describe the lines you want to add.                                                                    |
 | modify[0].lines[0].hook        | String           | Yes      | A string (usually a comment), that will be used to add new lines. NOTE, the hook will be automatically added at the end of your added lines. |
-| modify[0].lines[0].appendLines | Array of String  | No       | Append multiple (or a single) lines. Hook will be added as a new line after  your lines.                                                     |
+| modify[0].lines[0].appendLines | Array of Strings | No       | Append multiple (or a single) lines. Hook will be added as a new line after  your lines.                                                     |
 | modify[0].lines[0].appendLine  | String           | No       | Append an inline string. Hook will be added after a space of your string.                                                                    |
+
