@@ -48,6 +48,12 @@
           "appendLines": [
             "import [ModuleName] from './components/[ModuleName]';"
           ]
+        },
+        {
+          "hook": "/* ADD_UNION_TYPE */",
+          "appendLines": [
+            "| '[module-name]'"
+          ]
         }
       ]
     }
