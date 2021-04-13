@@ -31,10 +31,7 @@
         },
         {
           "fileName": "index.ts",
-          "template": [
-            "export { default } from './[ModuleName]';",
-            ""
-          ]
+          "template": ["export { default } from './[ModuleName]';", ""]
         }
       ]
     }
@@ -48,6 +45,10 @@
           "appendLines": [
             "import [ModuleName] from './components/[ModuleName]';"
           ]
+        },
+        {
+          "hook": "/* ADD_UNION_TYPE */",
+          "appendLine": "| '[module-name]'"
         }
       ]
     }
