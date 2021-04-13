@@ -32,9 +32,6 @@ export const modifyFile = ({
         string: element.appendLine,
       });
       const lineValue = `${parsedLine} ${element.hook}`;
-      console.log(modifiedFileStream);
-      console.log(lineValue);
-      console.log(element.hook);
 
       modifiedFileStream = modifiedFileStream.replace(element.hook, lineValue);
     }
