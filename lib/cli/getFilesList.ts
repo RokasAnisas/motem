@@ -1,4 +1,4 @@
-import fse from "fs-extra";
+import fse from "fs";
 import { readModule } from "./readModule";
 import type { ModuleHead } from "./types/ModuleHead.type";
 

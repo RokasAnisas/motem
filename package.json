@@ -6,10 +6,6 @@
     "access": "public"
   },
   "main": "./lib/index.js",
-  "engines": {
-    "node": "^14.15.1",
-    "npm": "^7.0.0"
-  },
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
@@ -52,7 +48,7 @@
   },
   "dependencies": {
     "case": "^1.6.3",
-    "fs-extra": "^9.1.0",
+    "fs": "*",
     "prompts": "^2.4.1"
   }
 }

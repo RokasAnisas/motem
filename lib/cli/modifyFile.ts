@@ -1,4 +1,4 @@
-import fse from "fs-extra";
+import fse from "fs";
 import { parseModuleName } from "./parseModuleName";
 import { printMessage } from "./printMessage";
 import { spreadArray } from "./spreadArray";

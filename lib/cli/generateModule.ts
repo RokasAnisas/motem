@@ -1,4 +1,4 @@
-import fse from "fs-extra";
+import fse from "fs";
 
 import { addFile } from "./addFile";
 import { parseModuleName } from "./parseModuleName";

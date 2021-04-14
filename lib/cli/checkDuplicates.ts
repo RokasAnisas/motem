@@ -1,4 +1,4 @@
-import fse from "fs-extra";
+import fse from "fs";
 import { PromptResponse } from "./types/PromptResponse.type";
 import { readModule } from "./readModule";
 import { parseModuleName } from "./parseModuleName";
