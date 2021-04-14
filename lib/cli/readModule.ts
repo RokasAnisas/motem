@@ -1,4 +1,4 @@
-import fse from "fs-extra";
+import fse from "fs";
 import type { Module } from "./types/Module.type";
 
 export const readModule = (filePath: string): Module => {
