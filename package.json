@@ -6,10 +6,6 @@
     "access": "public"
   },
   "main": "./lib/index.js",
-  "engines": {
-    "node": "^14.15.1",
-    "npm": "^7.0.0"
-  },
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
