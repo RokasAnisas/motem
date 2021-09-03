@@ -1,17 +1,20 @@
-import fse from "fs";
+import fse from 'fs';
 
-import { addFile } from "./addFile";
-import { parseModuleName } from "./parseModuleName";
-import { printMessage } from "./printMessage";
-import { readModule } from "./readModule";
-import { modifyFile } from "./modifyFile";
-import { PromptResponse } from "./types/PromptResponse.type";
+import { addFile } from './addFile';
+import { parseModuleName } from './parseModuleName';
+import { printMessage } from './printMessage';
+import { readModule } from './readModule';
+import { modifyFile } from './modifyFile';
+import { PromptResponse } from './types/PromptResponse.type';
 
-export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
+export const generateModule = ({
+  moduleName,
+  moduleType,
+}: PromptResponse): void => {
   const moduleContents = readModule(moduleType.path);
 
   // Add files
-  moduleContents.add?.forEach((directory) => {
+  moduleContents.add?.forEach(directory => {
     const dirNameParsed = parseModuleName({
       string: `${directory.dirPath}`,
       moduleName: moduleName,
@@ -19,9 +22,9 @@ export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
     const dirPath = `${process.cwd()}/${dirNameParsed}`;
     // Generate directory
     fse.mkdirSync(dirPath, { recursive: true });
-    printMessage({ type: "title", message: `${dirNameParsed}:` });
+    printMessage({ type: 'title', message: `${dirNameParsed}:` });
 
-    directory.files.map((file) => {
+    directory.files.map(file => {
       const fileNameParsed = parseModuleName({
         string: `${file.fileName}`,
         moduleName: moduleName,
@@ -38,10 +41,10 @@ export const generateModule = ({ moduleName, moduleType }: PromptResponse) => {
   });
 
   // Modify files
-  moduleContents.modify?.forEach((file) => {
+  moduleContents.modify?.forEach(file => {
     const filePath = `${process.cwd()}/${file.filePath}`;
 
-    printMessage({ type: "title", message: `${file.filePath}:` });
+    printMessage({ type: 'title', message: `${file.filePath}:` });
     modifyFile({
       filePath: filePath,
       lines: file.lines,

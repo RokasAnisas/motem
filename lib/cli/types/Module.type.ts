@@ -1,4 +1,4 @@
-import { ModifyFile } from "./ModifyFile.type";
+import { ModifyFile } from './ModifyFile.type';
 export interface Module {
   name: string;
   description?: string;
@@ -8,6 +8,7 @@ export interface Module {
      * (src/directory).
      */
     dirPath: string;
+    checkAdditionalDirs?: string[];
     files: Array<{
       /**
        * [ModuleName].ts
