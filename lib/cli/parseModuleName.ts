@@ -1,4 +1,4 @@
-import Case from "case";
+import Case from 'case';
 
 export const parseModuleName = ({
   moduleName,
@@ -10,13 +10,13 @@ export const parseModuleName = ({
 
   const moduleNamePlaceholderArr = Array.from(
     string.matchAll(regexMatch),
-    (m) => m[0]
+    m => m[0]
   );
 
   if (moduleNamePlaceholderArr.length > 0) {
     let resultLine: string = string;
-    moduleNamePlaceholderArr.forEach((hookLine) => {
-      const sanitizedHookLine = hookLine.replace("[", "").replace("]", "");
+    moduleNamePlaceholderArr.forEach(hookLine => {
+      const sanitizedHookLine = hookLine.replace('[', '').replace(']', '');
       const caseValue = Case.of(sanitizedHookLine) as CaseValue;
       const parsedModuleName = Case[caseValue](moduleName);
 
@@ -34,4 +34,4 @@ interface ParseModuleNameProps {
   string: string;
 }
 
-type CaseValue = "snake" | "pascal" | "camel" | "kebab" | "constant";
+type CaseValue = 'snake' | 'pascal' | 'camel' | 'kebab' | 'constant';

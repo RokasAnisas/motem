@@ -1,7 +1,7 @@
-import fse from "fs";
-import { PromptResponse } from "./types/PromptResponse.type";
-import { readModule } from "./readModule";
-import { parseModuleName } from "./parseModuleName";
+import fse from 'fs';
+import { PromptResponse } from './types/PromptResponse.type';
+import { readModule } from './readModule';
+import { parseModuleName } from './parseModuleName';
 
 export const checkDuplicates = async ({
   moduleType,
@@ -9,7 +9,7 @@ export const checkDuplicates = async ({
 }: PromptResponse): Promise<boolean> => {
   const moduleContents = readModule(moduleType.path);
 
-  const results: boolean[] | undefined = moduleContents.add?.map((dir) => {
+  const results: boolean[] | undefined = moduleContents.add?.map(dir => {
     const dirNameParsed = parseModuleName({
       string: `${dir.dirPath}`,
       moduleName: moduleName,
@@ -33,7 +33,6 @@ export const checkDuplicates = async ({
 
     return dirCheckResult;
   });
-
 
   return !!results && results.includes(true);
 };
