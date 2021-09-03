@@ -8,7 +8,7 @@ export interface Module {
      * (src/directory).
      */
     dirPath: string;
-    checkAdditionalDirs: string[];
+    checkAdditionalDirs?: string[];
     files: Array<{
       /**
        * [ModuleName].ts
